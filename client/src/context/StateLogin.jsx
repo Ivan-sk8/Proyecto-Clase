@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export default function StateLogin({children}) {
     const [perfil, setPerfil] = useState()
-    const [isLogin, setisLogin] = useState(false)
+    const [isLogin, setisLogin] = useState(true)
     
     const login = () => {
         setisLogin(true)

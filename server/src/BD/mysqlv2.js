@@ -123,5 +123,14 @@ async function login(tabla, data) {
     }
 }
 
+// Actualizar solo el campo 'estado' de una luz por su id
+async function actualizarEstado(tabla, id, estado) {
+    const [result] = await conexion.query(
+        `UPDATE ${tabla} SET estado = ? WHERE id = ?`,
+        [estado, id]
+    );
+    return result;
+}
 
-module.exports = { uno, todos, agregar, eliminar, login };
+
+module.exports = { uno, todos, agregar, eliminar, login, actualizarEstado };

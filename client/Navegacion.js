@@ -2,8 +2,10 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import { useContext } from "react";
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import StateLogin from "./src/context/StateLogin";
 import { estadologinGlobal } from "./src/context/contextData";
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -36,16 +38,7 @@ function MyStackHome() {
             component={screenHome} 
             options={{ headerShown: false }}
          />
-         <Tab.Screen
-            name="lucesCasa" 
-            component={lucesCasa} 
-            options={{ headerShown: false }}
-         />
-         <Tab.Screen
-            name="puertasCasa" 
-            component={puertasCasa} 
-            options={{ headerShown: false }}
-         />
+         
          <Tab.Screen
             name="detallesHome" 
             component={detallesHome} 
@@ -73,14 +66,29 @@ function MyTabs() {
             }}
          />
          <Tab.Screen
-            name="About" 
-            component={screenAcercade} 
+            name="lucesCasa" 
+            component={lucesCasa} 
             options={{
                headerShown:false,
                tabBarIcon: ({ color, size }) => (
-                  <Entypo name="info-with-circle" size={size} color={color} />
+                  <Entypo name="light-bulb" size={size} color={color} />
                ),
                tabBarLabelPosition: 'beside-icon',
+               tabBarBadge: 67,
+               color: 'white',
+               backgroundColor: 'black',
+            }}
+         />
+         <Tab.Screen
+            name="puertasCasa" 
+            component={puertasCasa} 
+            options={{
+               headerShown:false,
+               tabBarIcon: ({ color, size }) => (
+                  <FontAwesome6 name="door-open" size={size} color={color} />
+               ),
+               tabBarLabelPosition: 'beside-icon',
+               tabBarBadge: 67,
                color: 'white',
                backgroundColor: 'black',
             }}
