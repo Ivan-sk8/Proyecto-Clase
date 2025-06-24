@@ -39,7 +39,7 @@ const PuertaItem = ({ puertaData, onToggle, apiEndpoint }) => {
   return (
     <Card style={puertaItemStyles.card}>
       <View style={puertaItemStyles.cardContent}>
-        <MaterialCommunityIcons name="door" size={24} color="#8A2BE2" style={puertaItemStyles.icon} />
+        <MaterialCommunityIcons name={estaAbierta? 'door':'door-open'} size={24} color="#8A2BE2" style={puertaItemStyles.icon} />
         <Text style={puertaItemStyles.doorName}>{puertaData.nombre}</Text>
         <Switch
           value={estaAbierta}
