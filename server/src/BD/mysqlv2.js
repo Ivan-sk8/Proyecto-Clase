@@ -91,9 +91,9 @@ async function agregar(tabla, data) {
 }
 
 
-async function eliminar(tabla, id) {
-    const [result] = await conexion.query(`DELETE FROM ${tabla} WHERE id = ?`, [id]);
-    return result;
+async function eliminar(tabla, data) {
+    const [result] = await conexion.query(`DELETE FROM ${tabla} WHERE id = ?`, data.id);
+    return [result];
 }
 
 async function login(tabla, data) {
@@ -123,14 +123,5 @@ async function login(tabla, data) {
     }
 }
 
-// Actualizar solo el campo 'estado' de una luz por su id
-async function actualizarEstado(tabla, id, estado) {
-    const [result] = await conexion.query(
-        `UPDATE ${tabla} SET estado = ? WHERE id = ?`,
-        [estado, id]
-    );
-    return result;
-}
 
-
-module.exports = { uno, todos, agregar, eliminar, login, actualizarEstado };
+module.exports = { uno, todos, agregar, eliminar, login, actualizar };

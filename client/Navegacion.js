@@ -28,6 +28,7 @@ import detallesHome from "./src/screen/home/detallesHome";
 //llamar los screen de login
 import login from "./src/screen/login/login";
 import register from "./src/screen/login/register";
+import ScreenUsers from "./src/screen/users/ScreenUsers";
 
 
 function MyStackHome() {
@@ -103,6 +104,20 @@ function MyTabs() {
                ),
                tabBarLabelPosition: 'beside-icon',
                tabBarBadge: 2,
+               color: 'white',
+               backgroundColor: 'black',
+            }}
+         />
+         <Tab.Screen
+            name="Users"
+            component={ScreenUsers}
+            options={{
+               title: 'Usuarios',
+               headerShown: false,
+               tabBarIcon: ({ color, size }) => (
+                  <AntDesign name="user" size={size} color= {color} />
+               ),
+               tabBarLabelPosition: 'beside-icon',
                color: 'white',
                backgroundColor: 'black',
             }}

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Card, Switch } from 'react-native-paper';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import React, { useState, useEffect } from 'react';
-
+1
 // Componente individual para cada "puerta" en la lista
 const PuertaItem = ({ puertaData, onToggle, apiEndpoint }) => {
   if (!puertaData) return null;
